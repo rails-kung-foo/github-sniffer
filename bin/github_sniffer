@@ -2,4 +2,4 @@
 
 require 'github_sniffer'
 
-puts "Hello world"
+GithubSniffer::Cli::Application.start(ARGV)
