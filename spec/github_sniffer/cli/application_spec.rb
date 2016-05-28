@@ -17,7 +17,6 @@ describe GithubSniffer::Cli::Application do
             end
 
             it "returns message: #{message}" do
-
               expect(new_instance.dominant_language(user)).to eq("#{user} #{message}")
             end
           end

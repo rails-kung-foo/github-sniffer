@@ -2,7 +2,7 @@ module GithubSniffer
   module GithubExtension
 
     # We add our own method to the api.
-    # Github.new.repos.class returns our desired class
+    # Github.new.repos.class returns our desired class to extend
     Github::Client::Repos.class_eval do
 
       # returns dominant language from all repositories.
@@ -27,7 +27,6 @@ module GithubSniffer
         return nil if count.nil?
 
         # possible that multiple languages have the same number.
-        # We return the count for the languages in the second spot in the array
         [languages.select{ |_k, value| value == count }.keys, count]
       end
     end # Github::Client::Repos

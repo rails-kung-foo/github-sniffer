@@ -3,7 +3,8 @@ require 'thor'
 module GithubSniffer
   module Cli
     class Application < Thor
-      desc 'dominant_language USERNAME', 'Returns github profile of user'
+      
+      desc 'dominant_language USERNAME', 'Returns users mosed used programming language.'
       def dominant_language(username)
         prefered_lang = Github.new(user: username).repos.dominant_language
 
@@ -11,6 +12,7 @@ module GithubSniffer
       rescue Github::Error::NotFound
         p "#{username} not found!"
       end
+
       map dl: :dominant_language
 
      no_tasks do
