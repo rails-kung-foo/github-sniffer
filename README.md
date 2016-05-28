@@ -3,6 +3,7 @@
 Simple command line tool with github api to display github users most used languages.
 
 run `bundle exec bin/github_sniffer dominant_language USERNAME` to display users preferred language.
+`dl` is an alias for `dominant_language`.
 
 run `bin/console` for an interactive prompt.
 
