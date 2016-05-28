@@ -1,5 +1,5 @@
 require 'github_sniffer/version'
-require 'github_sniffer/cli'
+require 'cli/application'
 
 module GithubSniffer
 end
