@@ -17,7 +17,7 @@ module GithubSniffer
 
         # Cyle throug repos and sum up the main language
         github.repos.list.each do |repo|
-          repo_language = repo.language
+          repo_language = repo.language.to_s.downcase!
 
           languages[repo_language] = 0 if languages[repo_language].nil?
           languages[repo_language] += 1
