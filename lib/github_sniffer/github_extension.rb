@@ -1,6 +1,6 @@
 module GithubSniffer
   module GithubExtension
-    
+
     # We add our own method to the api.
     # Github.new.repos.class returns our desired class
     Github::Client::Repos.class_eval do
@@ -13,13 +13,18 @@ module GithubSniffer
 
         # Cycle through repos and sum up the main language
         self.list.each do |repo|
-          repo_language = repo.language.to_s.downcase!
+          next if repo.language.nil?
+
+          repo_language = repo.language.downcase!
 
           languages[repo_language] = 0 if languages[repo_language].nil?
           languages[repo_language] += 1
         end
 
         count = languages.values.max
+
+        # send nil back if user has no repos
+        return nil if count.nil?
 
         # possible that multiple languages have the same number.
         # We return the count for the languages in the second spot in the array
