@@ -23,6 +23,10 @@ Or install it yourself as:
 
     $ gem install github_sniffer
 
+## Development
+
+run `rspec spec` and `cucumber` for tests.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/rails-kung-foo/github_sniffer.
