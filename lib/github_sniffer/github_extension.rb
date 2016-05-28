@@ -6,7 +6,7 @@ module GithubSniffer
 
       # returns dominant language from all repositories.
       # Github.new(user: NAME).repos.dominant_language
-      # ['lang', count]
+      # [['ruby', 'c++'], count]
       def dominant_language
         languages = {}
 
@@ -18,9 +18,11 @@ module GithubSniffer
           languages[repo_language] += 1
         end
 
-        # The key is the language name and value is the count,
-        # we return the highest count for a langauge
-        languages.sort_by{ |_k, value| value }.last
+        count = languages.values.max
+
+        # possible that multiple languages have the same number.
+        # We return the count for the languages in the second spot in the array
+        [languages.select{ |_k, value| value == count }.keys, count]
       end
     end # Github::Client::Repos
   end # GithubExtension
