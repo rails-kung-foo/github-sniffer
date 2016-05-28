@@ -23,7 +23,9 @@ module GithubSniffer
           languages[repo_language] += 1
         end
 
-        p languages
+        prefered_lang = languages.sort_by{ |_k, value| value }.last
+
+        p "#{username} has #{prefered_lang[0]} as main language in #{prefered_lang[1]} repos."
       end
 
     end # Application
