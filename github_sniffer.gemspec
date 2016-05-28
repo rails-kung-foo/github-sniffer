@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['rails.kung.foo@gmail.com']
 
   spec.summary       = 'Simple command line tool to display user prefered language.'
-  spec.description   = 'Simple command line tool to look at Github profiles.'
+  spec.description   = 'Simple command line tool to display user prefered language.'
   spec.homepage      = 'https://github.com/rails-kung-foo/github-sniffer'
   spec.license       = "MIT"
 
