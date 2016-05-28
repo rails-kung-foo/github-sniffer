@@ -1,5 +1,6 @@
 module GithubSniffer
   module GithubExtension
+    
     # We add our own method to the api.
     # Github.new.repos.class returns our desired class
     Github::Client::Repos.class_eval do
